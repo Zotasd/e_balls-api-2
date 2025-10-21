@@ -1,0 +1,40 @@
+### cria menino
+POST http://localhost:3000/api/devices
+Content-Type: application/json
+
+{
+  "model": "modelo 3 de novo",
+  "location": "marro do barro",
+  "property": "Campo são campos do campo",
+  "sensors": ["temperatura", "humildade"]
+}
+
+###
+
+### lisata
+GET http://localhost:3000/api/devices
+
+###
+@id = 68f7ca6f635614f8c6f55703
+
+### buca
+GET http://localhost:3000/api/devices/{{id}}
+
+###
+
+### atualiza
+PUT http://localhost:3000/api/devices/{{id}}
+Content-Type: application/json
+
+{
+  "model": "ESP32 Atualizado",
+  "location": "Sala 102",
+  "property": "Prédio B",
+  "sensors": ["temperatura"]
+}
+
+###
+
+### deleta
+DELETE http://localhost:3000/api/devices/{{id}}
+
