@@ -1,12 +1,11 @@
 ### cria menino
-POST http://localhost:3000/api/devices
+POST http://localhost:3000/api/dataRead
 Content-Type: application/json
 
 {
-  "model": "modelo 3 de novo",
-  "location": "marro do barro",
-  "property": "Campo são campos do campo",
-  "sensors": ["temperatura", "humildade"]
+  "id_device": "2451",
+  "location": "são pituba da capixaiboinha",
+  "recived_data": "ta frio"
 }
 
 ###
@@ -27,10 +26,9 @@ PUT http://localhost:3000/api/devices/{{id}}
 Content-Type: application/json
 
 {
-  "model": "ESP32 Atualizado",
-  "location": "Sala 102",
-  "property": "Prédio B",
-  "sensors": ["temperatura"]
+  "id_device": "242351",
+  "location": "são pituba da capixaiboinha 2",
+  "recived_data": "ta frio nada :p"
 }
 
 ###
