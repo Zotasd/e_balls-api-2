@@ -1,40 +1,38 @@
 ### cria menino
-POST http://localhost:3000/api/devices
+POST http://localhost:3000/api/dataRead
 Content-Type: application/json
 
 {
-  "model": "modelo 3 de novo",
-  "location": "marro do barro",
-  "property": "Campo são campos do campo",
-  "sensors": ["temperatura", "humildade"]
+  "id_device": "2451",
+  "location": "são pituba da capixaiboinha",
+  "recived_data": "ta frio"
 }
 
 ###
 
 ### lisata
-GET http://localhost:3000/api/devices
+GET http://localhost:3000/api/dataRead
 
 ###
-@id = 68f7ca6f635614f8c6f55703
+@id = 690af0173f112ce0ea7ce0e9
 
 ### buca
-GET http://localhost:3000/api/devices/{{id}}
+GET http://localhost:3000/api/dataRead/{{id}}
 
 ###
 
 ### atualiza
-PUT http://localhost:3000/api/devices/{{id}}
+PUT http://localhost:3000/api/dataRead/{{id}}
 Content-Type: application/json
 
 {
-  "model": "ESP32 Atualizado",
-  "location": "Sala 102",
-  "property": "Prédio B",
-  "sensors": ["temperatura"]
+  "id_device": "242351",
+  "location": "são pituba da capixaiboinha 2",
+  "recived_data": "ta frio nada :p"
 }
 
 ###
 
 ### deleta
-DELETE http://localhost:3000/api/devices/{{id}}
+DELETE http://localhost:3000/api/dataRead/{{id}}
 

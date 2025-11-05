@@ -1,9 +1,9 @@
 const http = require("http");
 const express = require("express");
 const mongoose = require('mongoose');
-const devicesRouter = require('./routes/devices');
+const dataReadRouter = require('./routes/DataRead');
 
-const port = 3000;
+const port = 3000;        //<-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 const app = express();
 
 app.get("/", function(req, res) {
@@ -11,7 +11,8 @@ app.get("/", function(req, res) {
 });
 
 // conexão com o monog
-mongoose.connect('mongodb+srv://mateus:Ligadajustica7@e-station.txocscw.mongodb.net/?retryWrites=true&w=majority&appName=e-Station')
+//mongoose.connect('mongodb+srv://mateus:Ligadajustica7@e-station.txocscw.mongodb.net/?retryWrites=true&w=majority&appName=e-Station')
+mongoose.connect('mongodb+srv://felipezonta_db_user:Tnj6LW52xsGFkHSV@e-balls2.0anmq2a.mongodb.net/')
 .then(async () => {
     console.log('Conectado a mongodb show!');
 
@@ -23,16 +24,15 @@ mongoose.connect('mongodb+srv://mateus:Ligadajustica7@e-station.txocscw.mongodb.
     console.log('calesao criada se pa');
     
     app.listen(port, () => {
-      console.log(`pepinosada`);
+      console.log(`Servidor rodando na porta ${port}`);
     });
   })
 .catch(err => console.error('deu bolas, erro:', err));
 
 // rotas
-//app.use('/devices', devicesRouter);
 app.use(express.json());
-app.use('/api/devices', devicesRouter);
+app.use('/api/dataRead', dataReadRouter);
 
-// inicia o monstro
-http.createServer(app).listen(port, () => console.log("Servidor executando na porta ${port}"));
+// inicia o monstro?
+//http.createServer(app).listen(port, () => console.log("Servidor executando na porta ${port}"));
 
